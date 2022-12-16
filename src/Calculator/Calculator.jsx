@@ -67,13 +67,15 @@ const Calculator = () => {
 
         const words = computeStr;
         var start = words.indexOf(ln)
-        var end = words.indexOf(closure, start)
-        var number = words.substring(start + 3, end);
+        // var end = words.indexOf(closure, start)
+        // var number = words.substring(start + 3, end);
 
         //build new string:
         if (start !== -1) {
-            const newWords = words.substring(0, start) + "log(" + number + ",e)" + words.substring(end + 1, words.length)
+            // const newWords = words.substring(0, start) + "log(" + number + ",e)" + words.substring(end + 1, words.length)
             // setComputeStr(newWords)
+
+            const newWords = words.split("ln").join("log");
             return newWords;
         }
         return words;
